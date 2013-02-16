@@ -12,6 +12,7 @@ gem "will_paginate"
 gem "will_paginate-bootstrap"
 gem "bluecloth"
 gem "authlogic"
+gem "rvm-capistrano"
 
 group :development do
   gem "nifty-generators"
