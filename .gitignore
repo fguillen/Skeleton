@@ -19,3 +19,4 @@ coverage
 .DS_Store
 public/assets/uploads/
 /test/reports
+/config/app_config.yml

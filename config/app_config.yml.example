@@ -1,0 +1,14 @@
+development:
+  admin:
+    user: admin
+    pass: pass
+
+test:
+  admin:
+    user: admin
+    pass: pass
+
+production:
+  admin:
+    user: admin
+    pass: pass

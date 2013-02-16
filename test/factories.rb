@@ -1,8 +1,18 @@
 FactoryGirl.define do
-  factory :model do
-    title "Performance Title"
-    association :other_model
-    attach { File.new("#{Rails.root}/test/fixtures/images/extras1.jpg") }
-    sequence(:name) { |n| "Gift Card Provider Name #{n}" }
+  factory :admin_user do
+    sequence(:name) { |n| "AdminUser Name #{n}" }
+    sequence(:email) { |n| "email#{n}@email.com" }
+    password "pass"
+    password_confirmation "pass"
+  end
+
+  factory :item do
+    sequence(:title) { |n| "Item Title #{n}" }
+    text "The text"
+  end
+
+  factory :pic do
+    association :item
+    attach { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
   end
 end

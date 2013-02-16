@@ -1,0 +1,8 @@
+<h1>Item > <%= @item.title %></h1>
+<%= @item.text.to_md %>
+
+<ul>
+  <% @item.pics.each do |pic| %>
+    <li><%= image_tag pic.attach(:front) %></li>
+  <% end %>
+</ul>

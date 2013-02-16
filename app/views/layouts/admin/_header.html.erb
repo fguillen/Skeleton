@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.ui.js" %>
+<%= javascript_include_tag "/assets/vendor/rails/jquery_ujs.js" %>
+<%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
+
+<!-- bootstrap -->
+<%= javascript_include_tag "/assets/vendor/bootstrap/js/bootstrap.js" %>
+<%= stylesheet_link_tag "/assets/vendor/bootstrap/css/bootstrap.css" %>
+<%= stylesheet_link_tag "/assets/vendor/bootstrap/css/bootstrap-responsive.css" %>
+
+<!-- MDMagic : MarkDown editor for text fields -->
+<%= javascript_include_tag "/assets/vendor/mdmagick/vendor/a-tools.js" %>
+<%= javascript_include_tag "/assets/vendor/mdmagick/vendor/showdown.js" %>
+<%= javascript_include_tag "/assets/vendor/mdmagick/lib/mdmagick.js" %>
+<%= stylesheet_link_tag "/assets/vendor/mdmagick/assets/mdmagick.css" %>
+<%= stylesheet_link_tag "/assets/vendor/mdmagick/assets/icon_font/style.css" %>
+
+<!-- BBAssetsUpload -->
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/underscore.js" %>
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/backbone.js" %>
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/jquery.upload.js" %>
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/bbassetsupload.js" %>
+
+<!-- application -->
+<%= stylesheet_link_tag "/assets/app/admin/css/admin.css", :media => "all" %>
+<%= stylesheet_link_tag "/assets/app/admin/css/image_upload.css", :media => "all" %>
+<%= javascript_include_tag "/assets/app/admin/js/admin.js" %>
+
+<%= csrf_meta_tag %>
+<%= yield(:head) %>

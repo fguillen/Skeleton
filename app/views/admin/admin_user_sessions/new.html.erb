@@ -1,0 +1,38 @@
+<% title "Login" %>
+
+<%= form_for [:admin, @admin_user_session], :html => { :class => "form-horizontal" } do |f| %>
+  <%= render "/admin/shared/form_errors", :object => f.object %>
+
+  <legend><%= "Use your credentials" %></legend>
+
+  <div class="control-group">
+    <%= f.label :email, :class => "control-label" %>
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon-envelope"></i></span><%= f.text_field :email, :class => "span4", :type => "email" %>
+      </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => "control-label" %>
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon-lock"></i></span><%= f.password_field :password, :class => "span2" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit "Sign in", :class => "btn btn-primary", :id => "login-button" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= link_to "Forgot password", admin_forgot_password_path %>
+    </div>
+  </div>
+<% end %>
+
+
