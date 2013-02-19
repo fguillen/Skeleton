@@ -29,6 +29,10 @@ Opinionated _Rails project template_.
 
 * [Authlogic](https://github.com/binarylogic/authlogic)
 
+## i18n
+
+* [i18n](https://github.com/svenfuchs/i18n) with placeholders to :es and :en locales
+
 ## Testing
 
 * [TestUnit](http://ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit.html)
@@ -51,4 +55,15 @@ Opinionated _Rails project template_.
 * Rails log customization
 * String extensions
 
+## Layout
+
+* [Bootstrap](http://twitter.github.com/bootstrap)
+
+## Functionality
+
+* Login/Logout
+* Set locale
+* AdminUsers management
+* Items management, click&drap sorting
+* [Pics ajax management](https://github.com/fguillen/BBAssetsUpload)
 
