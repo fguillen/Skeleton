@@ -2,6 +2,7 @@ Skeleton::Application.routes.draw do
   root :to => "front/items#index"
 
   namespace :front do
+    resources :pages, :only => [:show]
     resources :items, :only => [:index, :show]
   end
 

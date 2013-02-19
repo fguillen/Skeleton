@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/front/header" %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="content" class="container">
+        <h1 class="page-title"><%= yield(:title) %></h1>
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render "layouts/front/footer" %>
+    <%= render "shared/analytics" %>
+  </body>
+</html>
+

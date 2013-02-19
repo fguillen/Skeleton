@@ -1,4 +1,5 @@
-<h1>Items</h1>
+<% title "Items" %>
+
 <ul>
   <% @items.each do |item| %>
     <li><%= link_to item.title, [:front, item] %></li>
