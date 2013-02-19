@@ -1,14 +1,35 @@
 development:
-  admin:
-    user: admin
-    pass: pass
+  host: "localhost:3000"
+  admin_email: "fguillen.mail@gmail.com"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "skeleton.org"
+    user_name: "user"
+    password: "pass"
 
 test:
-  admin:
-    user: admin
-    pass: pass
+  host: "test.com"
+  admin_email: "fguillen.mail@gmail.com"
+
+  smtp:
+    enabled: false
 
 production:
-  admin:
-    user: admin
-    pass: pass
+  host: "skeleton.org"
+  admin_email: "fguillen.mail@gmail.com"
+
+  s3_credentials:
+    bucket: "skeleton_production"
+    access_key_id: "KEY"
+    secret_access_key: "SECRET"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "skeleton.org"
+    user_name: "user"
+    password: "pass"

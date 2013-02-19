@@ -2,14 +2,13 @@
 
 Opinionated _Rails project template_.
 
+With all these libraries configured and working
+
 ## Rails
 
 * [Rails 3.2.11](https://github.com/rails/rails)
-* **NO** [RailsSprockets](https://github.com/sstephenson/sprockets)
-* ERB
-
-## Mailer
-
+* _Deactivated_ [RailsSprockets](https://github.com/sstephenson/sprockets)
+* [ERB](http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html)
 * [ActionMailer](https://github.com/rails/rails/tree/master/actionmailer)
 
 ## Config
@@ -31,7 +30,7 @@ Opinionated _Rails project template_.
 
 ## i18n
 
-* [i18n](https://github.com/svenfuchs/i18n) with placeholders to :es and :en locales
+* [i18n](https://github.com/svenfuchs/i18n) with placeholders to `:es` and `:en locales
 
 ## Testing
 
