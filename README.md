@@ -62,10 +62,10 @@ Opinionated _Rails project template_.
 ## Functionality
 
 * Admin/Front namespaces
-* Login/Logout
-* Set locale
+* Login/Logout/Remember password
+* Change locale
 * AdminUsers management
-* Items management, click&drap sorting
+* Items management, _click&drap_ sorting
 * [Pics ajax management](https://github.com/fguillen/BBAssetsUpload)
 * Static pages
 
