@@ -3,30 +3,32 @@ require "bundler/capistrano"
 set :application, "skeleton"
 set :scm, :git
 set :repository,  "git@github.com:fguillen/Skeleton.git"
+set :branch, "master"
 set :deploy_to, "/home/www/skeleton.fernandoguillen.info"
 set :user, "fguillen"
 set :group, "fguillen"
 set :use_sudo, false
 
-set :rvm_ruby_string, ENV["GEM_HOME"].gsub(/.*\//,"")
-set :rvm_install_ruby_params, "--1.9"      # for jruby/rbx default to 1.9 mode
-set :rvm_install_pkgs, %w[libyaml openssl] # package list from https://rvm.io/packages
-set :rvm_install_ruby_params, "--with-opt-dir=/usr/local/rvm/usr" # package support
-
-before "deploy:setup", "rvm:install_rvm"   # install RVM
-before "deploy:setup", "rvm:install_pkgs"  # install RVM packages before Ruby
-before "deploy:setup", "rvm:install_ruby"  # install Ruby and create gemset, or:
-before "deploy:setup", "rvm:create_gemset" # only create gemset
-before "deploy:setup", "rvm:import_gemset" # import gemset from file
-
-require "rvm/capistrano"
-
 server "skeleton.fernandoguillen.info", :web, :app, :db, :primary => true
+
+after "deploy:update_code", "customs:symlink"
+after "deploy", "deploy:cleanup"
+
+namespace :customs do
+  task :symlink, :roles => :app do
+    run <<-CMD
+      ln -nfs #{shared_path}/system/database.yml #{current_release}/config/database.yml &&
+      ln -nfs #{shared_path}/system/app_config.yml #{current_release}/config/app_config.yml &&
+      ln -nfs #{shared_path}/system/uploads #{current_release}/public/assets/uploads &&
+      ln -nfs #{shared_path}/system/production.sqlite3 #{current_release}/db/production.sqlite3
+    CMD
+  end
+end
 
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  task :restart, :roles => :app do
+    run "touch #{File.join("#{current_release}/tmp/restart.txt")}"
   end
 end
