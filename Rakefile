@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-LinoEscalera::Application.load_tasks
+Skeleton::Application.load_tasks

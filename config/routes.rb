@@ -1,4 +1,4 @@
-LinoEscalera::Application.routes.draw do
+Skeleton::Application.routes.draw do
   root :to => "front/items#index"
 
   namespace :front do

@@ -6,7 +6,7 @@ class Notifier < ActionMailer::Base
 
     mail(
       :to => admin_user.email,
-      :subject => "[LinoEscalera] Password reset"
+      :subject => "[Skeleton] Password reset"
     )
   end
 end
