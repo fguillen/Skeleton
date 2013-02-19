@@ -1,0 +1,54 @@
+# Skeleton
+
+Opinionated _Rails project template_.
+
+## Rails
+
+* [Rails 3.2.11](https://github.com/rails/rails)
+* **NO** [RailsSprockets](https://github.com/sstephenson/sprockets)
+* ERB
+
+## Mailer
+
+* [ActionMailer](https://github.com/rails/rails/tree/master/actionmailer)
+
+## Config
+
+* [NiftyGenerators](https://github.com/ryanb/nifty-generators) config, based in a yml file.
+
+## Exceptions
+
+* [ExceptionNotification](https://github.com/smartinez87/exception_notification)
+
+## Uploads
+
+* [Paperclip](https://github.com/thoughtbot/paperclip)
+* [AmazonS3 support](https://github.com/aws/aws-sdk-ruby)
+
+## Login
+
+* [Authlogic](https://github.com/binarylogic/authlogic)
+
+## Testing
+
+* [TestUnit](http://ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit.html)
+* [Mocha](https://github.com/freerange/mocha)
+* [FactoryGirl](https://github.com/thoughtbot/factory_girl)
+* [Delorean](https://github.com/bebanjo/delorean)
+* [Simplecov](https://github.com/colszowka/simplecov)
+* [Capybara](https://github.com/jnicklas/capybara)
+* [DatabaseCleaner](https://github.com/bmabey/database_cleaner)
+
+## Deploying
+
+* [Capistrano](https://github.com/capistrano/capistrano)
+
+## Initializers
+
+* Date Formats
+* Exception if _locale_ not found
+* Paperclip interpolation example
+* Rails log customization
+* String extensions
+
+
