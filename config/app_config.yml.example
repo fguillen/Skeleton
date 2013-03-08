@@ -12,7 +12,7 @@ development:
 
 test:
   host: "test.com"
-  admin_email: "fguillen.mail@gmail.com"
+  admin_email: "skeleton.mail@email.com"
 
   smtp:
     enabled: false

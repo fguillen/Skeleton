@@ -68,3 +68,15 @@ With all these libraries configured and working
 * [Pics ajax management](https://github.com/fguillen/BBAssetsUpload)
 * Static pages
 
+
+## TODO
+
+* Notifier test
+* Reset password
+* Create User
+* ColorPaletter
+* HistoryEvent
+* Add lograge gem
+* Session to DB
+* Add user_id to rails log
+* Test coverage

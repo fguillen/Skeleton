@@ -24,20 +24,18 @@ class Admin::AdminUserSessionsController < Admin::AdminController
     redirect_to admin_login_path, :notice => "Admin User logged out!"
   end
 
-  def reset_password
-    @admin_user = AdminUser.find_using_perishable_token!(params[:reset_password_code], 1.week)
+  def forgot_password
+    @admin_user_session = AdminUserSession.new
   end
 
-  def reset_password_submit
-    @admin_user = AdminUser.find_using_perishable_token!(params[:reset_password_code], 1.week)
+  def forgot_password_send_email
+    admin_user = AdminUser.find_by_email( params[:admin_user_session][:email] )
 
-    if @admin_user.update_attributes(params[:admin_user])
-      AdminUserSession.create(@admin_user)
-      redirect_to [:admin, @admin_user], :notice => "Password reseted!"
+    if admin_user
+      admin_user.send_reset_password_email
+      redirect_to admin_forgot_password_path, :notice => "Instructions to reset your password have been sent to your email"
     else
-      flash.now[:alert] = "Some errors trying to reset the password"
-      render :reset_password
+      redirect_to admin_forgot_password_path, :alert => "We can't find the email '#{params[:admin_user_session][:email]}'"
     end
   end
-
 end

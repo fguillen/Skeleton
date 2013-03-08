@@ -13,8 +13,8 @@ Skeleton::Application.routes.draw do
     match "logout" => "admin_user_sessions#destroy", :as => :logout
     match "forgot_password" => "admin_user_sessions#forgot_password", :as => :forgot_password, :via => :get
     match "forgot_password" => "admin_user_sessions#forgot_password_send_email", :as => :forgot_password, :via => :post
-    match "reset_password/:reset_password_code" => "members#reset_password", :as => :reset_password, :via => :get
-    match "reset_password/:reset_password_code" => "members#reset_password_submit", :as => :reset_password, :via => :put
+    match "reset_password/:reset_password_code" => "admin_users#reset_password", :as => :reset_password, :via => :get
+    match "reset_password/:reset_password_code" => "admin_users#reset_password_submit", :as => :reset_password, :via => :put
     resources :admin_user_sessions, :only => [:new, :create, :destroy]
 
     resources :admin_users

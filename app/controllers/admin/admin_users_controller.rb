@@ -1,5 +1,5 @@
 class Admin::AdminUsersController < Admin::AdminController
-  before_filter :require_admin_user
+  before_filter :require_admin_user, :except => [:reset_password, :reset_password_submit]
 
   def index
     @admin_users = AdminUser.all
@@ -41,5 +41,22 @@ class Admin::AdminUsersController < Admin::AdminController
     @admin_user = AdminUser.find(params[:id])
     @admin_user.destroy
     redirect_to :admin_admin_users, :notice => "Successfully destroyed AdminUser."
+  end
+
+  def reset_password
+    @admin_user = AdminUser.find_using_perishable_token!(params[:reset_password_code], 1.week)
+  end
+
+  def reset_password_submit
+    @admin_user = AdminUser.find_using_perishable_token!(params[:reset_password_code], 1.week)
+
+    if @admin_user.update_attributes(params[:admin_user])
+      AdminUserSession.create(@admin_user)
+      flash[:notice] = "Password reseted, you have been authenticated!"
+      redirect_back_or_default admin_root_path
+    else
+      flash.now[:alert] = "Some errors trying to reset the password"
+      render :reset_password
+    end
   end
 end
