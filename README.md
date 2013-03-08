@@ -71,9 +71,6 @@ With all these libraries configured and working
 
 ## TODO
 
-* Notifier test
-* Reset password
-* Create User
 * ColorPaletter
 * HistoryEvent
 * Add lograge gem

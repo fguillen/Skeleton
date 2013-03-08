@@ -13,6 +13,7 @@ gem "will_paginate-bootstrap"
 gem "bluecloth"
 gem "authlogic"
 gem "rvm-capistrano", "1.3.0.rc1"
+gem "lograge" # log cleaning
 
 group :development do
   gem "nifty-generators"
