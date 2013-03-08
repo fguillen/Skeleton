@@ -73,5 +73,4 @@ With all these libraries configured and working
 
 * ColorPaletter
 * HistoryEvent
-* Add user_id to rails log
 * Test coverage
