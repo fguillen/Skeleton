@@ -15,4 +15,8 @@ FactoryGirl.define do
     association :item
     attach { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
   end
+
+  factory :log_book_event, :class => LogBook::Event  do
+    text "Wadus Event"
+  end
 end

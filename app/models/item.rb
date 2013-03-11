@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   strip_attributes
+  log_book
 
   has_many :pics
 

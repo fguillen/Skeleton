@@ -28,6 +28,9 @@ class ApplicationHelperTest < ActionView::TestCase
 
     request_mock.stubs(:fullpath).returns("/admin/items/1/edit")
     assert_equal("active", admin_menu_class(:items))
+
+    request_mock.stubs(:fullpath).returns("/admin/log_book_events")
+    assert_equal("active", admin_menu_class(:log_book_events))
   end
 
 end

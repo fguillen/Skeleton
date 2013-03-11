@@ -13,13 +13,13 @@ module ApplicationHelper
   def admin_menu_class(actual_menu_name)
     menus = {
       :admin_users => ["/admin/admin_users.*"],
-      :items => ["/admin/items.*", "/admin"]
+      :items => ["/admin/items.*", "/admin"],
+      :log_book_events => ["/admin/log_book_events"]
     }
 
-    menus.each do |menu_name, menu_paths|
-      return "active" if actual_menu_name == menu_name && menu_paths.any? { |e| request.fullpath.gsub(/\?.*/, "") =~ /^#{e}$/ }
-    end
+    path = request.fullpath.gsub(/\?.*/, "")
 
+    return "active" if menus[actual_menu_name].any? { |e| path =~ /^#{e}$/ }
     return "no-active"
   end
 end

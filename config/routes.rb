@@ -17,6 +17,7 @@ Skeleton::Application.routes.draw do
     match "reset_password/:reset_password_code" => "admin_users#reset_password_submit", :as => :reset_password, :via => :put
     resources :admin_user_sessions, :only => [:new, :create, :destroy]
 
+    resources :log_book_events, :only => [:index]
     resources :admin_users
     resources :items do
       post :reorder, :on => :collection

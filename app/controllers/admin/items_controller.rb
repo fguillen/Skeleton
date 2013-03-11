@@ -15,6 +15,7 @@ class Admin::ItemsController < Admin::AdminController
 
   def create
     @item = Item.new(params[:item])
+    @item.log_book_historian = current_admin_user
     if @item.save
       redirect_to [:admin, @item], :notice => "Successfully created Item."
     else
@@ -29,6 +30,7 @@ class Admin::ItemsController < Admin::AdminController
 
   def update
     @item = Item.find(params[:id])
+    @item.log_book_historian = current_admin_user
     if @item.update_attributes(params[:item])
       redirect_to [:admin, @item], :notice  => "Successfully updated Item."
     else
@@ -39,6 +41,7 @@ class Admin::ItemsController < Admin::AdminController
 
   def destroy
     @item = Item.find(params[:id])
+    @item.log_book_historian = current_admin_user
     @item.destroy
     redirect_to :admin_items, :notice => "Successfully destroyed Item."
   end

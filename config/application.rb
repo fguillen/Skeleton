@@ -35,5 +35,9 @@ module Skeleton
       g.stylesheets     false
       g.helper          false
     end
+
+    config.after_initialize do
+      require "log_book/event"
+    end
   end
 end
