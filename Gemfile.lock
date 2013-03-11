@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/fguillen/ColorPalette.git
+  revision: ea5f166d71f536fa5ca2ea529a8ca0c897f2c9c9
+  specs:
+    color_palette (0.0.1)
+
+GIT
   remote: git@github.com:fguillen/LogBook.git
   revision: f10baad070830504c154f649fce21f184b7bdcb8
   specs:
@@ -178,6 +184,7 @@ DEPENDENCIES
   bluecloth
   capistrano
   capybara
+  color_palette!
   database_cleaner
   delorean
   exception_notification

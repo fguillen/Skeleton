@@ -1,4 +1,6 @@
 class Admin::AdminController < ApplicationController
+  include Admin::AdminHelper
+
   layout "/admin/admin"
 
   helper_method :current_admin_user, :namespace

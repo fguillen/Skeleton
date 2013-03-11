@@ -16,6 +16,7 @@ gem "rvm-capistrano", "1.3.0.rc1"
 gem "lograge" # log cleaning
 gem "acts-as-taggable-on"
 gem "log_book", :git => "git@github.com:fguillen/LogBook.git"
+gem "color_palette", :git => "git://github.com/fguillen/ColorPalette.git"
 
 group :development do
   gem "nifty-generators"

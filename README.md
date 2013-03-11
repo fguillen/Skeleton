@@ -78,6 +78,4 @@ With all these libraries configured and working
 
 ## TODO
 
-* ColorPalette
-* HistoryEvent
 * Test coverage

@@ -1,0 +1,45 @@
+{
+  "states": [
+    { "background": "#cd8745", "foreground": "#000" },
+    { "background": "#82d37c", "foreground": "#000" },
+    { "background": "#81dbde", "foreground": "#000" },
+    { "background": "#90a26b", "foreground": "#000" },
+    { "background": "#c2b19d", "foreground": "#000" },
+    { "background": "#c1e0a3", "foreground": "#000" },
+    { "background": "#afaa78", "foreground": "#000" },
+    { "background": "#C2BB68", "foreground": "#000" },
+    { "background": "#63E17C", "foreground": "#000" },
+    { "background": "#34B4C8", "foreground": "#000" }
+  ],
+
+  "number": [
+    { "background": "#CCCCCC", "foreground": "#000", "regex": "^0$" },
+    { "background": "#91E391", "foreground": "#000", "regex": "^[^-]" },
+    { "background": "#E68585", "foreground": "#000", "regex": "^-" }
+  ],
+
+  "boolean": [
+    { "background": "#91E391", "foreground": "#000", "regex": "^(yes|1|true)$" },
+    { "background": "#E68585", "foreground": "#000", "regex": "^(no|0|false)$" }
+  ],
+
+  "tags": [
+    { "background": "#f5acb0", "foreground": "#000" },
+    { "background": "#f5abd5", "foreground": "#000" },
+    { "background": "#e7abf5", "foreground": "#000" },
+    { "background": "#b2a6f5", "foreground": "#000" },
+    { "background": "#abc9f6", "foreground": "#000" },
+    { "background": "#acf5ea", "foreground": "#000" },
+    { "background": "#acf5c5", "foreground": "#000" },
+    { "background": "#adf6ac", "foreground": "#000" },
+    { "background": "#caf5ac", "foreground": "#000" },
+    { "background": "#f5f1a7", "foreground": "#000" },
+    { "background": "#f5caab", "foreground": "#000" },
+    { "background": "#ff85a8", "foreground": "#000" },
+    { "background": "#ffd685", "foreground": "#000" },
+    { "background": "#fff385", "foreground": "#000" },
+    { "background": "#85ffd0", "foreground": "#000" },
+    { "background": "#85c2ff", "foreground": "#000" },
+    { "background": "#ff85f3", "foreground": "#000" }
+  ]
+}
