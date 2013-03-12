@@ -12,6 +12,7 @@ gem "will_paginate"
 gem "will_paginate-bootstrap"
 gem "bluecloth"
 gem "authlogic"
+gem "ruby_regex", :git => "git@github.com:fguillen/ruby_regex.git"
 gem "rvm-capistrano", "1.3.0.rc1"
 gem "lograge" # log cleaning
 gem "acts-as-taggable-on"

@@ -1,8 +1,22 @@
-# Skeleton
+# NewProject
 
 Opinionated _Rails project template_.
 
 With all these libraries configured and working
+
+## Setup
+
+Replace `<ProjectName>` with yout project name:
+
+    PROJECT_NAME=<ProjectName> curl -#L https://raw.github.com/fguillen/Skeleton/master/etc/osx_init.rb | ruby
+    cd <ProjectName>
+    cp config/app_config.yml.example config/app_config.yml
+    cp config/database.yml.example config/database.yml
+    bundle
+    rake db:schema:load db:seed
+    rake test
+    rails s
+    open http://localhost:3000/admin
 
 ## Including
 
@@ -70,10 +84,6 @@ With all these libraries configured and working
 * Items management, _click&drap_ sorting
 * [Pics ajax management](https://github.com/fguillen/BBAssetsUpload)
 * Static pages
-
-## Setup
-
-
 
 
 ## TODO

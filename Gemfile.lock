@@ -12,6 +12,12 @@ GIT
       acts-as-taggable-on
       rails (~> 3.0)
 
+GIT
+  remote: git@github.com:fguillen/ruby_regex.git
+  revision: 62f520b3e7d4a1601a6bbdc1f77cd5c112e09158
+  specs:
+    ruby_regex (0.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -197,6 +203,7 @@ DEPENDENCIES
   nifty-generators
   paperclip
   rails (= 3.2.11)
+  ruby_regex!
   rvm-capistrano (= 1.3.0.rc1)
   simplecov
   sqlite3

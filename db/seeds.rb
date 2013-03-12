@@ -17,7 +17,7 @@ ActiveRecord::Base.transaction do
     puts "Created item [#{item.id}] – #{item.title}"
   end
 
-  email = "admin@skeleton.org"
+  email = "admin@email.com"
   password = Digest::MD5.hexdigest("#{Time.now.to_i}-#{rand(1000)}")
   admin_user =
     AdminUser.create!(
