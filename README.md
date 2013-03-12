@@ -8,7 +8,7 @@ With all these libraries configured and working
 
 Replace `<ProjectName>` with yout project name:
 
-    PROJECT_NAME=<ProjectName> curl -#L https://raw.github.com/fguillen/Skeleton/master/etc/osx_init.rb | ruby
+    curl -#L https://raw.github.com/fguillen/Skeleton/master/etc/osx_init.rb | PROJECT_NAME=<ProjectName> ruby
     cd <ProjectName>
     cp config/app_config.yml.example config/app_config.yml
     cp config/database.yml.example config/database.yml

@@ -28,5 +28,5 @@ end
 
 shell "git clone --depth=1 git@github.com:fguillen/Skeleton.git #{name}"
 shell "rm -rf #{name}/.git"
-shell "find ./NewProject/ -type f ! -name '*_init.rb' | xargs grep 'skeleton' | cut -f1 -d':' | xargs sed -i '' -e 's/skeleton/#{name.underscore}/'"
-shell "find ./NewProject/ -type f ! -name '*_init.rb' | xargs grep 'Skeleton' | cut -f1 -d':' | xargs sed -i '' -e 's/Skeleton/#{name}/'"
+shell "find ./#{name}/ -type f ! -name '*_init.rb' | xargs grep 'skeleton' | cut -f1 -d':' | xargs sed -i '' -e 's/skeleton/#{name.underscore}/'"
+shell "find ./#{name}/ -type f ! -name '*_init.rb' | xargs grep 'Skeleton' | cut -f1 -d':' | xargs sed -i '' -e 's/Skeleton/#{name}/'"
