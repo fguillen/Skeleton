@@ -7,8 +7,8 @@ development:
     server: "smtp.mandrillapp.com"
     port: 587
     domain: "skeleton.org"
-    user_name: "user"
-    password: "pass"
+    user: "user"
+    pass: "pass"
 
 test:
   host: "test.com"
@@ -31,5 +31,5 @@ production:
     server: "smtp.mandrillapp.com"
     port: 587
     domain: "skeleton.org"
-    user_name: "user"
-    password: "pass"
+    user: "user"
+    pass: "pass"

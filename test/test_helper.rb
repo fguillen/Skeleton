@@ -32,6 +32,12 @@ class ActiveSupport::TestCase
     @admin_user = FactoryGirl.create(:admin_user)
     @controller.stubs(:current_admin_user).returns(@admin_user)
   end
+
+  def assert_ids(array_1, array_2, message = nil)
+    assert_block do
+      assert_equal(array_1.ids, array_2.ids)
+    end
+  end
 end
 
 

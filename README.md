@@ -10,6 +10,10 @@ Replace `<ProjectName>` with yout project name:
 
     curl -#L https://raw.github.com/fguillen/Skeleton/master/etc/osx_init.rb | PROJECT_NAME=<ProjectName> ruby
     cd <ProjectName>
+    cp .rvmrc.example .rvmrc
+    cd .
+    # check if gemset has been created properly
+
     cp config/app_config.yml.example config/app_config.yml
     cp config/database.yml.example config/database.yml
     bundle
@@ -47,6 +51,10 @@ Replace `<ProjectName>` with yout project name:
 ### i18n
 
 * [i18n](https://github.com/svenfuchs/i18n) with placeholders to `:es` and `:en locales
+
+### Validations
+
+* [RubyRegex](https://github.com/eparreno/ruby_regex)
 
 ### Testing
 
@@ -89,3 +97,9 @@ Replace `<ProjectName>` with yout project name:
 ## TODO
 
 * Test coverage
+* niceFileField
+* FontAwesome icons
+* ColorPalette -> StylePalette
+* LogBook
+* Change sortable table to "table-sortable" class
+* Sortable table is not needed to have span classes in rows
