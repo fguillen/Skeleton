@@ -96,6 +96,7 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+* Reset CSS (front)
 * Test coverage
 * niceFileField
 * FontAwesome icons
