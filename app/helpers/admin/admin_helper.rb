@@ -24,7 +24,7 @@ module Admin::AdminHelper
   end
 
   def render_label(word, palette_name)
-    ColorPalette::Helper.label(word, palette_name).html_safe
+    StylePalette::Helper.label(word, palette_name).html_safe
   end
 
   def render_labels(words, palette_name)

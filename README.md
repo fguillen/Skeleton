@@ -99,7 +99,5 @@ Replace `<ProjectName>` with yout project name:
 * Test coverage
 * niceFileField
 * FontAwesome icons
-* ColorPalette -> StylePalette
-* LogBook
 * Change sortable table to "table-sortable" class
 * Sortable table is not needed to have span classes in rows

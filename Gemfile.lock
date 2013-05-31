@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/fguillen/ColorPalette.git
-  revision: ea5f166d71f536fa5ca2ea529a8ca0c897f2c9c9
+  remote: git://github.com/fguillen/StylePalette.git
+  revision: 07513d3ead2e87c04421edebd16dc3aaf184f5d7
   specs:
-    color_palette (0.0.1)
+    style_palette (0.0.5)
 
 GIT
   remote: git@github.com:fguillen/LogBook.git
@@ -190,7 +190,6 @@ DEPENDENCIES
   bluecloth
   capistrano
   capybara
-  color_palette!
   database_cleaner
   delorean
   exception_notification
@@ -208,5 +207,6 @@ DEPENDENCIES
   simplecov
   sqlite3
   strip_attributes
+  style_palette!
   will_paginate
   will_paginate-bootstrap
