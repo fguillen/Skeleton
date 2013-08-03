@@ -97,4 +97,3 @@ Replace `<ProjectName>` with yout project name:
 ## TODO
 
 * Improve test coverage
-* FontAwesome icons

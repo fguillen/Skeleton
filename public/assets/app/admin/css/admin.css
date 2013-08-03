@@ -14,13 +14,3 @@
   margin-top: 100px;
   background: #ccc;
 }
-
-#grettings {
-  margin-top: -16px;
-  padding-left: 30px;
-  padding-right: 20px;
-}
-
-#grettings #user-name {
-  text-align: right;
-}
