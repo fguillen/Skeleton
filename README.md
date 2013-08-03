@@ -96,7 +96,6 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
-* favicon
 * helper: menu_class
 * Reset CSS (front)
 * Test coverage
