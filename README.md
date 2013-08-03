@@ -100,4 +100,3 @@ Replace `<ProjectName>` with yout project name:
 * FontAwesome icons
 * Change sortable table to "table-sortable" class
 * Sortable table is not needed to have span classes in rows
-* request.ip in the log
