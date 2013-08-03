@@ -81,7 +81,8 @@ Replace `<ProjectName>` with yout project name:
 
 ### Layout
 
-* [Bootstrap](http://twitter.github.com/bootstrap)
+* [Bootstrap 3](http://twitter.github.com/bootstrap)
+* [FontAwesome icons](http://fortawesome.github.io/Font-Awesome/)
 
 ### Functionality
 
@@ -92,6 +93,7 @@ Replace `<ProjectName>` with yout project name:
 * Items management, _click&drap_ sorting
 * [Pics ajax management](https://github.com/fguillen/BBAssetsUpload)
 * Static pages
+* [AppConfig](https://github.com/ryanb/nifty-generators)
 
 
 ## TODO

@@ -1,4 +1,6 @@
 module Admin::AdminHelper
+  include ApplicationHelper
+
   def twitterized_type(type)
     case type
       when :alert
