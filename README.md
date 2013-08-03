@@ -26,7 +26,7 @@ Replace `<ProjectName>` with yout project name:
 
 ### Rails
 
-* [Rails 3.2.11](https://github.com/rails/rails)
+* [Rails 3.2.14](https://github.com/rails/rails)
 * _Deactivated_ [RailsSprockets](https://github.com/sstephenson/sprockets)
 * [ERB](http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html)
 * [ActionMailer](https://github.com/rails/rails/tree/master/actionmailer)
