@@ -96,9 +96,7 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
-* Reset CSS (front)
-* Test coverage
-* niceFileField
+* Improve test coverage
 * FontAwesome icons
 * Change sortable table to "table-sortable" class
 * Sortable table is not needed to have span classes in rows
