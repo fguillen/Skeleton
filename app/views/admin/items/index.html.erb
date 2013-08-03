@@ -17,11 +17,11 @@
     <tbody data-update-url="<%= reorder_admin_items_url %>">
       <% @items.each do |item| %>
         <tr data-id="<%= item.id %>">
-          <td class="span1 handle"><i class="icon-list"></i></td>
-          <td class="span1"><%= link_to item.id, [:admin, item] %></td>
-          <td class="span7"><%= item.title %></td>
-          <td class="span1"><%= item.position %></td>
-          <td class="span2"><%= item.created_at.to_s(:datetimedb) %></td>
+          <td class="handle"><i class="icon-list"></i></td>
+          <td><%= link_to item.id, [:admin, item] %></td>
+          <td><%= item.title %></td>
+          <td><%= item.position %></td>
+          <td><%= item.created_at.to_s(:datetimedb) %></td>
         </tr>
       <% end %>
     </tbody>
