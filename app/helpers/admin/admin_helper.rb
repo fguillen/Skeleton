@@ -17,10 +17,7 @@ module Admin::AdminHelper
       :log_book_events => ["/admin/log_book_events"]
     }
 
-    path = request.fullpath.gsub(/\?.*/, "")
-
-    return "active" if menus[actual_menu_name].any? { |e| path =~ /^#{e}$/ }
-    return "no-active"
+    menu_class(menus, actual_menu_name)
   end
 
   def render_label(word, palette_name)
