@@ -96,9 +96,12 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+* favicon
+* helper: menu_class
 * Reset CSS (front)
 * Test coverage
 * niceFileField
 * FontAwesome icons
 * Change sortable table to "table-sortable" class
 * Sortable table is not needed to have span classes in rows
+* request.ip in the log
