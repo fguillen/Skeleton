@@ -27,7 +27,6 @@ Replace `<ProjectName>` with yout project name:
 ### Rails
 
 * [Rails 3.2.14](https://github.com/rails/rails)
-* _Deactivated_ [RailsSprockets](https://github.com/sstephenson/sprockets)
 * [ERB](http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html)
 * [ActionMailer](https://github.com/rails/rails/tree/master/actionmailer)
 
@@ -99,5 +98,4 @@ Replace `<ProjectName>` with yout project name:
 ## TODO
 
 * Improve test coverage
-* Submenu like "info / payments / log_book_events"
 * Make menu_class using Rails.application.routes.router.recognize(request){ |route, matches, parameters| puts route.name }
