@@ -20,6 +20,7 @@ Skeleton::Application.routes.draw do
     resources :log_book_events, :only => [:index]
     resources :admin_users
     resources :items do
+      get :log_book_events, :on => :member
       post :reorder, :on => :collection
 
       resources :pics, :only => [:index, :create, :destroy] do

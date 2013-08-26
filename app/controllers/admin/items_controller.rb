@@ -1,12 +1,12 @@
 class Admin::ItemsController < Admin::AdminController
   before_filter :require_admin_user
+  before_filter :load_item, :only => [:show, :edit, :update, :destroy, :log_book_events]
 
   def index
     @items = Item.by_position.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -25,11 +25,9 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.log_book_historian = current_admin_user
     if @item.update_attributes(params[:item])
       redirect_to [:admin, @item], :notice  => "Successfully updated Item."
@@ -40,7 +38,6 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.log_book_historian = current_admin_user
     @item.destroy
     redirect_to :admin_items, :notice => "Successfully destroyed Item."
@@ -51,5 +48,15 @@ class Admin::ItemsController < Admin::AdminController
       Item.update_all(["position=?", index], ["id=?", id])
     end
     render :json => { "status" => "ok" }
+  end
+
+  def log_book_events
+    @log_book_events = @item.log_book_events.by_recent.paginate(:page => params[:page], :per_page => 10)
+  end
+
+private
+
+  def load_item
+    @item = Item.find(params[:id])
   end
 end

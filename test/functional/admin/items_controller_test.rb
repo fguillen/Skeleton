@@ -122,4 +122,13 @@ class Admin::ItemsControllerTest < ActionController::TestCase
 
     assert_equal([item_2, item_3, item_1].ids, Item.by_position.ids)
   end
+
+  def test_log_book_events
+    item = FactoryGirl.create(:item)
+    item.log_book_events << FactoryGirl.create(:log_book_event)
+
+    get :log_book_events, :id => item
+
+    assert_template "log_book_events"
+  end
 end

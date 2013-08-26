@@ -1,13 +1,5 @@
 <% title "Item > #{@item.title}" %>
 
-<dl class="dl-horizontal">
-  <dt>Id</dt><dd><%= @item.id %></dd>
-  <dt>Position</dt><dd><%= @item.position %></dd>
-  <dt>Title</dt><dd><%= @item.title %></dd>
-  <dt>Text</dt><dd><%= @item.text.to_md %></dd>
-</dl>
+<%= render :partial => "admin/items/menu", :locals => { :item => @item } %>
+<%= render :partial => "admin/items/info", :locals => { :item => @item } %>
 
-<p>
-  <%= link_to "Edit", edit_admin_item_path(@item) %> |
-  <%= link_to "Destroy", [:admin, @item], :confirm => "Are you sure?", :method => :delete %>
-</p>
