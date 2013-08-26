@@ -99,3 +99,5 @@ Replace `<ProjectName>` with yout project name:
 ## TODO
 
 * Improve test coverage
+* Submenu like "info / payments / log_book_events"
+* Make menu_class using Rails.application.routes.router.recognize(request){ |route, matches, parameters| puts route.name }
