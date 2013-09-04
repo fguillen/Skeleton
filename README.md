@@ -49,7 +49,7 @@ Replace `<ProjectName>` with yout project name:
 
 ### i18n
 
-* [i18n](https://github.com/svenfuchs/i18n) with placeholders to `:es` and `:en locales
+* [i18n](https://github.com/svenfuchs/i18n) with placeholders to `:es` and `:en` locales
 
 ### Validations
 
@@ -93,6 +93,7 @@ Replace `<ProjectName>` with yout project name:
 * [Pics ajax management](https://github.com/fguillen/BBAssetsUpload)
 * Static pages
 * [AppConfig](https://github.com/ryanb/nifty-generators)
+* Menu element actived helper
 
 
 ## TODO
