@@ -98,5 +98,6 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+* Add Skeleton_session to be replaced in the init script
 * Improve test coverage
 * Make menu_class using Rails.application.routes.router.recognize(request){ |route, matches, parameters| puts route.name }
