@@ -94,7 +94,7 @@ Replace `<ProjectName>` with yout project name:
 * Static pages
 * [AppConfig](https://github.com/ryanb/nifty-generators)
 * Menu element actived helper
-
+* Tableless model
 
 ## TODO
 
