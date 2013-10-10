@@ -6,6 +6,8 @@
 
   <body>
     <div id="wrapper">
+      <%= render "layouts/front/menu" %>
+
       <div id="content" class="container">
         <h1 class="page-title"><%= yield(:title) %></h1>
         <%= yield %>

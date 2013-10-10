@@ -1,0 +1,16 @@
+/* bootstrap tricks */
+
+/* for the bottom fixed nav bar */
+body { padding-bottom: 70px; }
+
+/* remove nav bar border radious */
+.navbar{
+   -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;
+}
+
+
+/* Items index */
+#items_index .thumbnail {
+  height: 550px;
+  margin-bottom: 20px;
+}

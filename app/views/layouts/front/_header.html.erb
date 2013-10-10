@@ -15,9 +15,14 @@
 <meta name="Rating" content="General">
 <meta name="Robots" content="INDEX,FOLLOW">
 
-
 <%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.ui.js" %>
+<%= javascript_include_tag "/assets/vendor/rails/jquery_ujs.js" %>
 <%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
+
+<!-- bootstrap -->
+<%= javascript_include_tag "/assets/vendor/bootstrap/js/bootstrap.min.js" %>
+<%= stylesheet_link_tag "/assets/vendor/bootstrap/css/bootstrap.min.css" %>
 
 <!-- application -->
 <%= stylesheet_link_tag "/assets/app/front/css/front.css", :media => "all" %>

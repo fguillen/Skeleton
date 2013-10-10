@@ -1,13 +1,16 @@
-<footer class="footer">
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
   <div class="container">
-    <div class="row">
-      <div class="span4">
-        <ul>
-          <li><%= link_to "Items", :front_items %></li>
-          <li><%= link_to "About", front_page_path("about") %></li>
-          <li><%= link_to "Login", :admin_login %></li>
-        </ul>
-      </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex4-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Skeleton", :root, :class => "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse navbar-ex4-collapse collapse" style="height: 1px;">
+      <p class="navbar-text pull-right">contact <a href="mailto:skeleton@email.com" class="navbar-link">skeleton@email.com</a></p>
     </div>
   </div>
-</footer>
+</nav>

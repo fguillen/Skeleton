@@ -1,7 +1,7 @@
 <% title "Login" %>
 
 <%= form_for [:admin, @admin_user_session], :html => { :class => "form-horizontal" } do |f| %>
-  <%= render "/admin/shared/form_errors", :object => f.object %>
+  <%= render "/shared/form_errors", :object => f.object %>
 
   <fieldset>
     <legend><%= "Use your credentials" %></legend>

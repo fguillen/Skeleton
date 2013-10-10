@@ -1,6 +1,6 @@
 es:
   dictionary:
-    welcome: "Bien venido!"
+    menu_brand: "Skeleton Administración"
 
   will_paginate:
     previous_label: "&#8592; Anterior"

@@ -1,9 +1,17 @@
 <% title "Item > #{@item.title}" %>
 
-<%= @item.text.to_md %>
 
-<ul>
-  <% @item.pics.each do |pic| %>
-    <li><%= image_tag pic.attach(:front) %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-4"><%= @item.text.to_md %></div>
+  <div class="col-md-8">
+    <ul>
+      <% @item.pics.each do |pic| %>
+        <li>
+          <%= image_tag pic.attach(:front_big) %>
+          <p><%= pic.title %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+

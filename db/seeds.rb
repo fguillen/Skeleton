@@ -18,7 +18,7 @@ ActiveRecord::Base.transaction do
   end
 
   email = "admin@email.com"
-  password = Digest::MD5.hexdigest("#{Time.now.to_i}-#{rand(1000)}")
+  password = "pass"
   admin_user =
     AdminUser.create!(
       :name => "Super Admin",

@@ -7,7 +7,7 @@
   background: black;
   color: white;
   padding: 20px;
-  z-index: 100;
+  z-index: 1001;
 }
 
 .footer {
