@@ -1,12 +1,12 @@
 class Admin::AdminUsersController < Admin::AdminController
   before_filter :require_admin_user, :except => [:reset_password, :reset_password_submit]
+  before_filter :load_admin_user, :only => [:show, :edit, :update, :destroy]
 
   def index
     @admin_users = AdminUser.all
   end
 
   def show
-    @admin_user = AdminUser.find(params[:id])
   end
 
   def new
@@ -24,11 +24,9 @@ class Admin::AdminUsersController < Admin::AdminController
   end
 
   def edit
-    @admin_user = AdminUser.find(params[:id])
   end
 
   def update
-    @admin_user = AdminUser.find(params[:id])
     if @admin_user.update_attributes(params[:admin_user])
       redirect_to [:admin, @admin_user], :notice  => "Successfully updated AdminUser."
     else
@@ -38,7 +36,6 @@ class Admin::AdminUsersController < Admin::AdminController
   end
 
   def destroy
-    @admin_user = AdminUser.find(params[:id])
     @admin_user.destroy
     redirect_to :admin_admin_users, :notice => "Successfully destroyed AdminUser."
   end
@@ -58,5 +55,11 @@ class Admin::AdminUsersController < Admin::AdminController
       flash.now[:alert] = "Some errors trying to reset the password"
       render :reset_password
     end
+  end
+
+private
+
+  def load_admin_user
+    @admin_user = AdminUser.find(params[:id])
   end
 end
