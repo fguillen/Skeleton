@@ -101,3 +101,10 @@ Replace `<ProjectName>` with yout project name:
 * Add Skeleton_session to be replaced in the init script
 * Improve test coverage
 * Make menu_class using Rails.application.routes.router.recognize(request){ |route, matches, parameters| puts route.name }
+* Upgrade all gems
+* Rails 4.0
+* Rbenv
+* Ruby 2.0
+* ExceptionNotifier config to app_config
+* Add capitrano thing
+* Add staging environment
