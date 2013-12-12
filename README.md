@@ -69,6 +69,10 @@ Replace `<ProjectName>` with yout project name:
 
 * [Capistrano](https://github.com/capistrano/capistrano)
 
+### CI integration
+
+* Bash script for [Jenkins](http://jenkins-ci.org/)
+
 ### Initializers
 
 * Date Formats
