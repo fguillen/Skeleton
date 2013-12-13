@@ -9,16 +9,8 @@ With all these libraries configured and working
 Replace `<ProjectName>` with yout project name:
 
     curl -#L https://raw.github.com/fguillen/Skeleton/master/etc/osx_init.rb | PROJECT_NAME=<ProjectName> ruby
-    cd <ProjectName>
-    cp .rvmrc.example .rvmrc
-    cd .
-    # check if gemset has been created properly
 
-    cp config/app_config.yml.example config/app_config.yml
-    cp config/database.yml.example config/database.yml
-    bundle
-    rake db:schema:load db:seed
-    rake test
+    cd <ProjectName>
     rails s
     open http://localhost:3000/admin
 

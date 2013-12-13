@@ -5,7 +5,6 @@ if ENV["PROJECT_NAME"].nil?
   exit 1
 end
 
-
 name = ENV["PROJECT_NAME"]
 puts "Initializing project '#{name}'"
 
@@ -31,3 +30,9 @@ shell "rm -rf #{name}/.git"
 shell "find ./#{name}/ -type f ! -name '*_init.rb' | xargs grep 'skeleton' | cut -f1 -d':' | xargs sed -i '' -e 's/skeleton/#{name.underscore}/'"
 shell "find ./#{name}/ -type f ! -name '*_init.rb' | xargs grep 'Skeleton' | cut -f1 -d':' | xargs sed -i '' -e 's/Skeleton/#{name}/'"
 shell "mv #{name}/lib/tasks/skeleton.rake #{name}/lib/tasks/#{name.underscore}.rake"
+
+shell "cp #{name}/config/app_config.yml.example #{name}/config/app_config.yml"
+shell "cp #{name}/config/database.yml.example #{name}/config/database.yml"
+shell "cd #{name} && bundle"
+shell "cd #{name} && rake db:schema:load db:seed"
+shell "cd #{name} && rake test"
