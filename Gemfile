@@ -13,7 +13,6 @@ gem "will_paginate-bootstrap", :git => "https://github.com/mrfoto/will_paginate-
 gem "bluecloth"
 gem "authlogic"
 gem "ruby_regex", :git => "git@github.com:fguillen/ruby_regex.git"
-gem "rvm-capistrano", "1.3.0.rc1"
 gem "lograge" # log cleaning
 gem "acts-as-taggable-on"
 gem "log_book", :git => "git@github.com:fguillen/LogBook.git", :ref => "36a9372"
@@ -23,6 +22,9 @@ group :development do
   gem "nifty-generators"
   gem "faker"
   gem "capistrano"
+  gem "capistrano-bundler"
+  gem "capistrano-rails", "~> 1.1.0"
+  gem "capistrano-rbenv", github: "capistrano/rbenv"
 end
 
 group :test do

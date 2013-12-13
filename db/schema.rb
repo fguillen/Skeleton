@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20130311164910) do
     t.string   "historian_type"
     t.integer  "historizable_id"
     t.string   "historizable_type"
-    t.string   "text",              :null => false
+    t.text     "text",              :null => false
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

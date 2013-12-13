@@ -110,5 +110,5 @@ Replace `<ProjectName>` with yout project name:
 * Rbenv
 * Ruby 2.0
 * ExceptionNotifier config to app_config
-* Add capitrano thing
+* Add capistrano thing
 * Add staging environment

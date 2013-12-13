@@ -1,34 +1,36 @@
-require "bundler/capistrano"
+# require "bundler/capistrano"
 
-set :application, "skeleton"
-set :scm, :git
-set :repository,  "git@github.com:fguillen/Skeleton.git"
-set :branch, "master"
-set :deploy_to, "/home/www/skeleton.fernandoguillen.info"
-set :user, "fguillen"
-set :group, "fguillen"
+set :rbenv_ruby, File.read('.ruby-version').strip
+set :ssh_options, { :forward_agent => false, :user => "develop" }
+set :application, "Skeleton"
+set :repo_url, "git@github.com:fguillen/Skeleton.git"
+set :deploy_to, "/var/www/skeleton.daliaresearch.com"
+set :log_level, :debug
 set :use_sudo, false
+set :keep_releases, 5
+set :migration_role, :app
 
-server "skeleton.fernandoguillen.info", :web, :app, :db, :primary => true
-
-after "deploy:update_code", "customs:symlink"
+# after "deploy", "customs:symlink"
 after "deploy", "deploy:cleanup"
 
 namespace :customs do
-  task :symlink, :roles => :app do
-    run <<-CMD
-      ln -nfs #{shared_path}/system/database.yml #{current_release}/config/database.yml &&
-      ln -nfs #{shared_path}/system/app_config.yml #{current_release}/config/app_config.yml &&
-      ln -nfs #{shared_path}/system/uploads #{current_release}/public/assets/uploads &&
-      ln -nfs #{shared_path}/system/production.sqlite3 #{current_release}/db/production.sqlite3
-    CMD
+  task :symlink do
+    on roles(:app) do
+      execute "ln -nfs #{shared_path}/system/database.yml #{current_path}/config/database.yml"
+      execute "ln -nfs #{shared_path}/system/app_config.yml #{current_path}/config/app_config.yml"
+    end
   end
 end
 
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  task :restart, :roles => :app do
-    run "touch #{File.join("#{current_release}/tmp/restart.txt")}"
+
+  desc "Restart app"
+  task :restart do
+    on roles(:app) do
+      execute "mkdir #{current_path}/tmp"
+      execute "touch #{current_path}/tmp/restart.txt"
+    end
   end
 end
