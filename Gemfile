@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
-gem "rails", "3.2.14"
+gem "rails", "~> 4.0.2"
+gem "activerecord-session_store"
+gem "protected_attributes"
 
 gem "sqlite3"
 gem "json"
@@ -15,7 +17,7 @@ gem "authlogic"
 gem "ruby_regex", :git => "git@github.com:fguillen/ruby_regex.git"
 gem "lograge" # log cleaning
 gem "acts-as-taggable-on"
-gem "log_book", :git => "git@github.com:fguillen/LogBook.git", :ref => "36a9372"
+gem "log_book", "~> 0.1"
 gem "style_palette", :git => "git://github.com/fguillen/StylePalette.git"
 
 group :development do

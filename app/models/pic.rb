@@ -8,7 +8,7 @@ class Pic < ActiveRecord::Base
   validates :item_id, :presence => true
   validates :position, :presence => true
 
-  scope :by_position, order("position asc")
+  scope :by_position, -> { order("position asc") }
 
   ATTACH_STYLES = {
     :front => "215x",
