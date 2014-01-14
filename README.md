@@ -104,3 +104,6 @@ Replace `<ProjectName>` with yout project name:
 * ExceptionNotifier config to app_config
 * Add capistrano thing
 * Add staging environment
+* Move unit test to models
+* Move helper test and so to another places
+* Remove test/unit and create test/lib .. be sure this folder is excuted in "rake".. check MiniTest::Rails::Testing.default_tasks << 'lib'
