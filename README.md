@@ -107,3 +107,5 @@ Replace `<ProjectName>` with yout project name:
 * Move unit test to models
 * Move helper test and so to another places
 * Remove test/unit and create test/lib .. be sure this folder is excuted in "rake".. check MiniTest::Rails::Testing.default_tasks << 'lib'
+* Integrating minitest: http://blog.crowdint.com/2013/06/14/testing-rails-with-minitest.html
+* Error using assert_ids (use it in the tests)
