@@ -18,9 +18,13 @@ Replace `<ProjectName>` with yout project name:
 
 ### Rails
 
-* [Rails 3.2.14](https://github.com/rails/rails)
+* [Rails 4.0.2](https://github.com/rails/rails)
 * [ERB](http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html)
 * [ActionMailer](https://github.com/rails/rails/tree/master/actionmailer)
+
+### Ruby
+
+* [Ruby 2.0.0](https://www.ruby-lang.org)
 
 ### Config
 
@@ -49,7 +53,7 @@ Replace `<ProjectName>` with yout project name:
 
 ### Testing
 
-* [TestUnit](http://ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit.html)
+* [MiniTest](https://github.com/seattlerb/minitest)
 * [Mocha](https://github.com/freerange/mocha)
 * [FactoryGirl](https://github.com/thoughtbot/factory_girl)
 * [Delorean](https://github.com/bebanjo/delorean)
@@ -97,15 +101,5 @@ Replace `<ProjectName>` with yout project name:
 * Add Skeleton_session to be replaced in the init script
 * Improve test coverage
 * Make menu_class using Rails.application.routes.router.recognize(request){ |route, matches, parameters| puts route.name }
-* Upgrade all gems
-* Rails 4.0
-* Rbenv
-* Ruby 2.0
-* ExceptionNotifier config to app_config
 * Add capistrano thing
 * Add staging environment
-* Move unit test to models
-* Move helper test and so to another places
-* Remove test/unit and create test/lib .. be sure this folder is excuted in "rake".. check MiniTest::Rails::Testing.default_tasks << 'lib'
-* Integrating minitest: http://blog.crowdint.com/2013/06/14/testing-rails-with-minitest.html
-* Error using assert_ids (use it in the tests)

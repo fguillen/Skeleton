@@ -6,6 +6,10 @@ end
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
+require "minitest/rails"
+require "minitest/rails/capybara"
+require "minitest/focus"
+require "minitest/colorize"
 require "mocha/setup"
 require_relative "factories"
 
@@ -34,9 +38,7 @@ class ActiveSupport::TestCase
   end
 
   def assert_ids(array_1, array_2, message = nil)
-    assert_block do
-      assert_equal(array_1.ids, array_2.ids)
-    end
+    assert_equal(array_1.ids, array_2.ids)
   end
 end
 

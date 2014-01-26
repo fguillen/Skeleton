@@ -37,4 +37,9 @@ group :test do
   gem "capybara", "2.1.0"
   gem "database_cleaner"
   gem "selenium-webdriver", "2.35.1"
+
+  gem "minitest-rails"
+  gem "minitest-rails-capybara"
+  gem "minitest-colorize"
+  gem "minitest-focus"
 end
