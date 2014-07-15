@@ -45,7 +45,7 @@ class Admin::ItemsController < Admin::AdminController
 
   def reorder
     params[:ids].each_with_index do |id, index|
-      Item.update_all(["position=?", index], ["id=?", id])
+      Item.find(id).update_attributes!(:position => index)
     end
     render :json => { "status" => "ok" }
   end

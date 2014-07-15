@@ -60,7 +60,7 @@ class Admin::PicsControllerTest < ActionController::TestCase
     pic_3 = FactoryGirl.create(:pic, :position => 3, :item => item)
 
     item.reload
-    assert_equal([pic_1, pic_2, pic_3].map(&:id), item.pics.by_position.map(&:id))
+    assert_ids([pic_1, pic_2, pic_3], item.pics.by_position)
 
     post(
       :reorder,
@@ -73,7 +73,7 @@ class Admin::PicsControllerTest < ActionController::TestCase
     assert_equal("ok", JSON.parse(response.body)["status"])
 
     item.reload
-    assert_equal([pic_2, pic_3, pic_1].map(&:id), item.pics.by_position.map(&:id))
+    assert_ids([pic_2, pic_3, pic_1], item.pics.by_position)
   end
 
 end

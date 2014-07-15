@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Skeleton::Application.config.secret_key_base = 'a12ca2a9083fd7d4757ca19cfeca2d8a9a94d17a19cd5dab0a64265a763187f72a05834e834361b89aafe5b9eb0b9f42cf9b10ad8af377675a3b799aee4b8bef_Skeleton'
+Rails.application.config.secret_key_base = 'a12ca2a9083fd7d4757ca19cfeca2d8a9a94d17a19cd5dab0a64265a763187f72a05834e834361b89aafe5b9eb0b9f42cf9b10ad8af377675a3b799aee4b8bef_Skeleton'

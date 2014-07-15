@@ -1,5 +1,5 @@
 if Rails.env.production? || Rails.env.staging?
-  Skeleton::Application.config.middleware.use(
+  Rails.application.config.middleware.use(
     ExceptionNotification::Rack,
     :email => {
       :email_prefix => "[Skeleton] ",

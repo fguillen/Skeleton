@@ -109,6 +109,7 @@ Replace `<ProjectName>` with yout project name:
   end
 
 
+# Make `rake` to also execute tests in `test/etc` folder
 # Check I18n error when not translation.. it is not working in last versions
 # Add scope :by_recent, -> { order("id desc") } to every model
 # Test reset_password, reset_password_submit

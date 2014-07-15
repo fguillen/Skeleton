@@ -1,5 +1,5 @@
 class Pic < ActiveRecord::Base
-  attr_accessible :item, :attach
+  attr_accessible :item, :attach, :position
   belongs_to :item
 
   before_validation :initialize_position
@@ -16,6 +16,8 @@ class Pic < ActiveRecord::Base
     :admin => "303x203#"
   }
 
+  do_not_validate_attachment_file_type :attach
+
   # TODO: ugly! the point is that in test we don't use S3 so it needs another config
   if APP_CONFIG[:s3_credentials]
     has_attached_file(
@@ -23,7 +25,7 @@ class Pic < ActiveRecord::Base
       :styles => ATTACH_STYLES,
       :storage => :s3,
       :s3_credentials => APP_CONFIG[:s3_credentials],
-      :path => "/assets/uploads/:item_id/:id_:style.:extension",
+      :path => "/assets/uploads/:rails_env/:item_id/:id_:style.:extension",
     )
   else
     has_attached_file(

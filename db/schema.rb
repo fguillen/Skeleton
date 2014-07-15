@@ -9,77 +9,80 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311164910) do
+ActiveRecord::Schema.define(version: 20140715170227) do
 
-  create_table "admin_users", :force => true do |t|
-    t.string   "name",              :null => false
-    t.string   "email",             :null => false
+  create_table "admin_users", force: true do |t|
+    t.string   "name",              null: false
+    t.string   "email",             null: false
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "perishable_token"
   end
 
-  add_index "admin_users", ["perishable_token"], :name => "index_admin_users_on_perishable_token"
+  add_index "admin_users", ["perishable_token"], name: "index_admin_users_on_perishable_token"
 
-  create_table "items", :force => true do |t|
-    t.string   "title",      :null => false
+  create_table "items", force: true do |t|
+    t.string   "title",      null: false
     t.text     "text"
-    t.integer  "position",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "position",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "log_book_events", :force => true do |t|
+  create_table "log_book_events", force: true do |t|
     t.integer  "historian_id"
     t.string   "historian_type"
     t.integer  "historizable_id"
     t.string   "historizable_type"
-    t.text     "text",              :null => false
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.text     "text",              null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "pics", :force => true do |t|
-    t.integer  "item_id",             :null => false
+  create_table "pics", force: true do |t|
+    t.integer  "item_id",             null: false
     t.string   "attach_file_name"
     t.string   "attach_content_type"
     t.integer  "attach_file_size"
     t.datetime "attach_updated_at"
-    t.integer  "position",            :null => false
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.integer  "position",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
     t.text     "data"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
-  create_table "taggings", :force => true do |t|
+  create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
     t.integer  "tagger_id"
     t.string   "tagger_type"
-    t.string   "context",       :limit => 128
+    t.string   "context",       limit: 128
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
-  create_table "tags", :force => true do |t|
-    t.string "name"
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
 end

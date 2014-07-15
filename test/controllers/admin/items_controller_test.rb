@@ -109,7 +109,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     item_2 = FactoryGirl.create(:item, :position => 2)
     item_3 = FactoryGirl.create(:item, :position => 3)
 
-    assert_equal([item_1, item_2, item_3].ids, Item.by_position.ids)
+    assert_ids([item_1, item_2, item_3], Item.by_position)
 
     post(
       :reorder,
@@ -120,7 +120,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_equal("application/json", response.content_type)
     assert_equal("ok", JSON.parse(response.body)["status"])
 
-    assert_equal([item_2, item_3, item_1].ids, Item.by_position.ids)
+    assert_ids([item_2, item_3, item_1], Item.by_position)
   end
 
   def test_log_book_events

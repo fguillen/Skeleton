@@ -3,7 +3,7 @@ class AdminUser < ActiveRecord::Base
     c.validate_email_field = false
   end
 
-  strip_attributes
+  # strip_attributes
 
   attr_accessible :name, :email, :password, :password_confirmation
 

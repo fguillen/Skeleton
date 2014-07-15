@@ -19,7 +19,7 @@ class Admin::PicsController < Admin::AdminController
 
   def reorder
     params[:ids].each_with_index do |id, index|
-      @item.pics.update_all(["position=?", index], ["id=?", id])
+      @item.pics.find(id).update_attributes!(:position => index)
     end
     render :json => { "status" => "ok" }
   end

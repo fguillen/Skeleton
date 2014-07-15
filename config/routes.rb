@@ -1,4 +1,4 @@
-Skeleton::Application.routes.draw do
+Rails.application.routes.draw do
   root :to => "front/items#index"
 
   namespace :front do
