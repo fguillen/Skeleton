@@ -104,4 +104,32 @@ class Admin::AdminUsersControllerTest < ActionController::TestCase
 
     assert !AdminUser.exists?(admin_user.id)
   end
+
+  def test_reset_password
+    admin_user = FactoryGirl.create(:admin_user)
+    get(
+      :reset_password,
+      :reset_password_code => admin_user.perishable_token
+    )
+
+    assert_template "reset_password"
+  end
+
+  def test_reset_password_submit
+    admin_user = FactoryGirl.create(:admin_user, :email => "email@email.com")
+
+    put(
+      :reset_password_submit,
+      :reset_password_code => admin_user.perishable_token,
+      :admin_user => {
+        :password => "PASS",
+        :password_confirmation => "PASS"
+      }
+    )
+
+    assert_redirected_to admin_root_path
+    assert_not_nil(flash[:notice])
+
+    # assert_equal admin_user, AdminUserSession.new(:email => "email@email.com", :password => "PASS").record
+  end
 end
