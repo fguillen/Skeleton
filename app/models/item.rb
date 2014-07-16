@@ -13,6 +13,7 @@ class Item < ActiveRecord::Base
   validates :position, :presence => true
 
   scope :by_position, -> { order("position asc") }
+  scope :by_recent, -> { order("id desc") }
 
   def initialize_position
     self.position ||= Item.minimum(:position).to_i - 1

@@ -12,7 +12,7 @@ class Admin::LogBookEventsControllerTest < ActionController::TestCase
     get :index
 
     assert_template "admin/log_book_events/index"
-    assert_equal([log_book_event_2, log_book_event_1].ids, assigns(:log_book_events).ids)
+    assert_ids([log_book_event_2, log_book_event_1], assigns(:log_book_events))
   end
 
 end

@@ -17,4 +17,12 @@ class AdminUserTest < ActiveSupport::TestCase
 
     assert_not_equal(old_perishable_token, admin_user.perishable_token)
   end
+
+  def test_scope_by_recent
+    admin_user_1 = FactoryGirl.create(:admin_user, :id => 1002)
+    admin_user_2 = FactoryGirl.create(:admin_user, :id => 1003)
+    admin_user_3 = FactoryGirl.create(:admin_user, :id => 1001)
+
+    assert_ids([admin_user_2, admin_user_1, admin_user_3], AdminUser.by_recent)
+  end
 end

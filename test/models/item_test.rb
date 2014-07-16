@@ -16,6 +16,14 @@ class ItemTest < ActiveSupport::TestCase
     item_1 = FactoryGirl.create(:item, :position => 10)
     item_2 = FactoryGirl.create(:item, :position => 9)
 
-    assert_equal([item_2, item_1].ids, Item.by_position.ids)
+    assert_ids([item_2, item_1], Item.by_position)
+  end
+
+  def test_scope_by_recent
+    item_1 = FactoryGirl.create(:item, :id => 1002)
+    item_2 = FactoryGirl.create(:item, :id => 1003)
+    item_3 = FactoryGirl.create(:item, :id => 1001)
+
+    assert_ids([item_2, item_1, item_3], Item.by_recent)
   end
 end
