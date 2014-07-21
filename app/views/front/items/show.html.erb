@@ -1,5 +1,9 @@
-<% title "Item > #{@item.title}" %>
+<% title (t "views.items.show.title", :item_title => @item.title) %>
 
+<ol class="breadcrumb">
+  <li><%= link_to (t "layouts.breadcrumbs.items"), :admin_items %></li>
+  <li class="active"><%= @item.title %></li>
+</ol>
 
 <div class="row">
   <div class="col-md-4"><%= @item.text.to_md %></div>

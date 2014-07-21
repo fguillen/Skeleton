@@ -98,12 +98,12 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+# Environment badget
 # Make `rake` to also execute tests in `test/etc` folder
 # Check I18n error when not translation.. it is not working in last versions
 # Test reset_password, reset_password_submit
 # item / menu : add a margin-bottom
 * Change all urls by this style: [:offer_clicks, :provider, @provider_user, offer]
-* Configure title in a consistent way "with |" and add the project name to the beggining (check CampaignPlatform)
 * Add breadcrumbs (check CampaignPlatform)
 * Add Skeleton_session to be replaced in the init script
 * Improve test coverage

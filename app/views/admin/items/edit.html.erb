@@ -1,4 +1,15 @@
-<% title "Edit Item > #{@item.title}" %>
+<% title (t "views.items.edit.title", :item_title => @item.title) %>
+
+<ol class="breadcrumb">
+  <li><%= link_to (t "layouts.breadcrumbs.items"), :admin_items %></li>
+  <li><%= link_to @item.title, [:admin, @item] %></li>
+  <li class="active"><%= t "layouts.breadcrumbs.edit" %></li>
+</ol>
+
+<p class="lead">
+  <%= t "views.items.edit.text" %>
+</p>
+
 <div id="item_form">
   <%= render "form" %>
   <%= render :partial => "form_pics", :item => @item %>

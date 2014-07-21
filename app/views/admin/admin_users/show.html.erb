@@ -1,12 +1,19 @@
-<% title "AdminUser > #{@admin_user.name}" %>
+<% title (t "views.admin_users.show.title", :admin_user_name => @admin_user.name) %>
+
+<ol class="breadcrumb">
+  <li><%= link_to (t "layouts.breadcrumbs.admin_users"), :admin_admin_users %></li>
+  <li class="active"><%= @admin_user.name %></li>
+</ol>
 
 <dl class="dl-horizontal">
-  <dt>Id</dt><dd><%= @admin_user.id %></dd>
-  <dt>Name</dt><dd><%= @admin_user.name %></dd>
-  <dt>Email</dt><dd><%= @admin_user.email %></dd>
+  <dt><%= t "activerecord.attributes.admin_user.id" %></dt><dd><%= @admin_user.id %></dd>
+  <dt><%= t "activerecord.attributes.admin_user.name" %></dt><dd><%= @admin_user.name %></dd>
+  <dt><%= t "activerecord.attributes.admin_user.email" %></dt><dd><%= @admin_user.email %></dd>
 </dl>
 
-<p>
-  <%= link_to "Edit", edit_admin_admin_user_path(@admin_user) %> |
-  <%= link_to "Destroy", [:admin, @admin_user], :confirm => "Are you sure?", :method => :delete %>
-</p>
+<div class="controls text-right">
+  <p>
+    <%= link_to (t "views.admin_users.show.edit_button"), edit_admin_admin_user_path(@admin_user), :class => "btn btn-primary" %>
+    <%= link_to (t "views.admin_users.show.delete_button"), [:admin, @admin_user], :data => { :confirm => (t "views.admin_users.show.delete_confirmation") }, :method => :delete, :class => "btn btn-danger" %>
+  </p>
+</div>

@@ -45,9 +45,9 @@ class Admin::AdminUserSessionsControllerTest < ActionController::TestCase
     assert_template "admin/admin_user_sessions/forgot_password"
   end
 
-  def test_forgot_password_send_email_with_no_valid_email
+  def test_forgot_password_submit_with_no_valid_email
     post(
-      :forgot_password_send_email,
+      :forgot_password_submit,
       :admin_user_session => {
         :email => "not-exists"
       }
@@ -57,12 +57,12 @@ class Admin::AdminUserSessionsControllerTest < ActionController::TestCase
     assert_not_nil( flash[:alert] )
   end
 
-  def test_forgot_password_send_email
+  def test_forgot_password_submit
     admin_user = FactoryGirl.create( :admin_user )
     AdminUser.any_instance.expects( :send_reset_password_email )
 
     post(
-      :forgot_password_send_email,
+      :forgot_password_submit,
       :admin_user_session => {
         :email => admin_user.email
       }

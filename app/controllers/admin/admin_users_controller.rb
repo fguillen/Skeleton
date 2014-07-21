@@ -3,7 +3,7 @@ class Admin::AdminUsersController < Admin::AdminController
   before_filter :load_admin_user, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @admin_users = AdminUser.all
+    @admin_users = AdminUser.by_recent
   end
 
   def show
@@ -16,10 +16,10 @@ class Admin::AdminUsersController < Admin::AdminController
   def create
     @admin_user = AdminUser.new(params[:admin_user])
     if @admin_user.save
-      redirect_to [:admin, @admin_user], :notice => "Successfully created AdminUser."
+      redirect_to [:admin, @admin_user], :notice => t("controllers.admin_users.create.success")
     else
-      flash.now[:alert] = "Some error trying to create admin_user."
-      render :action => 'new'
+      flash.now[:alert] = t("controllers.admin_users.create.error")
+      render :action => :new
     end
   end
 
@@ -28,20 +28,22 @@ class Admin::AdminUsersController < Admin::AdminController
 
   def update
     if @admin_user.update_attributes(params[:admin_user])
-      redirect_to [:admin, @admin_user], :notice  => "Successfully updated AdminUser."
+      redirect_to [:admin, @admin_user], :notice  => t("controllers.admin_users.update.success")
     else
-      flash.now[:alert] = "Some error trying to update AdminUser."
-      render :action => 'edit'
+      flash.now[:alert] = t("controllers.admin_users.update.error")
+      render :action => :edit
     end
   end
 
   def destroy
     @admin_user.destroy
-    redirect_to :admin_admin_users, :notice => "Successfully destroyed AdminUser."
+    redirect_to :admin_admin_users, :notice => t("controllers.admin_users.destroy.success")
   end
 
   def reset_password
     @admin_user = AdminUser.find_using_perishable_token!(params[:reset_password_code], 1.week)
+
+    render :reset_password, :layout => "admin/admin_basic"
   end
 
   def reset_password_submit
@@ -49,11 +51,11 @@ class Admin::AdminUsersController < Admin::AdminController
 
     if @admin_user.update_attributes(params[:admin_user])
       AdminUserSession.create(@admin_user)
-      flash[:notice] = "Password reseted, you have been authenticated!"
+      flash[:notice] = t("controllers.admin_users.reset_password.success")
       redirect_back_or_default admin_root_path
     else
-      flash.now[:alert] = "Some errors trying to reset the password"
-      render :reset_password
+      flash.now[:alert] = t("controllers.admin_users.reset_password.error")
+      render :reset_password, :layout => "admin/admin_basic"
     end
   end
 

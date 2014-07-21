@@ -12,7 +12,7 @@ class Admin::AdminUsersControllerTest < ActionController::TestCase
     get :index
 
     assert_template "admin/admin_users/index"
-    assert_ids([@admin_user, admin_user_1, admin_user_2], assigns(:admin_users))
+    assert_ids([admin_user_2, admin_user_1, @admin_user], assigns(:admin_users))
   end
 
   def test_show

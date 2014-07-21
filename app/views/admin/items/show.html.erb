@@ -1,4 +1,9 @@
-<% title "Item > #{@item.title}" %>
+<% title t("views.items.show.title", :item_title => @item.title) %>
+
+<ol class="breadcrumb">
+  <li><%= link_to (t "layouts.breadcrumbs.items"), :admin_items %></li>
+  <li class="active"><%= @item.title %></li>
+</ol>
 
 <%= render :partial => "admin/items/menu", :locals => { :item => @item } %>
 <%= render :partial => "admin/items/info", :locals => { :item => @item } %>

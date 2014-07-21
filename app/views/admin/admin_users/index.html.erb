@@ -1,21 +1,24 @@
-<% title "AdminUsers" %>
+<% title (t "views.admin_users.index.title") %>
 
-<p><%= link_to "New Admin User", new_admin_admin_user_path, :class => "btn btn-default" %></p>
+<ol class="breadcrumb">
+  <li class="active"><%= t "layouts.breadcrumbs.admin_users" %></li>
+</ol>
 
 <table class="table table-striped table-hover">
   <tr>
-    <th class="col-sm-1">Id</th>
-    <th class="col-sm-2">Name</th>
-    <th class="col-sm-2">Email</th>
-    <th class="col-sm-2">Created At</th>
+    <th><%= t "activerecord.attributes.admin_user.id" %></th>
+    <th><%= t "activerecord.attributes.admin_user.name" %></th>
+    <th><%= t "activerecord.attributes.admin_user.email" %></th>
+    <th><%= t "activerecord.attributes.admin_user.created_at" %> At</th>
   </tr>
 
   <% @admin_users.each do |admin_user| %>
     <tr>
       <td><%= link_to admin_user.id, [:admin, admin_user] %></td>
-      <td><%= admin_user.name %></td>
+      <td><%= link_to admin_user.name, [:admin, admin_user] %></td>
       <td><%= admin_user.email %></td>
       <td><%= admin_user.created_at.to_s(:datetimedb) %></td>
     </tr>
   <% end %>
 </table>
+

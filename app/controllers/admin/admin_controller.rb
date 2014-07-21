@@ -10,7 +10,7 @@ class Admin::AdminController < ApplicationController
   def require_admin_user
     unless current_admin_user
       store_location
-      flash[:alert] = "You need to be authenticated to acccess this page"
+      flash[:alert] = t("controllers.admin.authentication_required")
       redirect_to admin_login_path
       return false
     end

@@ -1,11 +1,13 @@
 <dl class="dl-horizontal">
-  <dt>Id</dt><dd><%= item.id %></dd>
-  <dt>Position</dt><dd><%= item.position %></dd>
-  <dt>Title</dt><dd><%= item.title %></dd>
-  <dt>Text</dt><dd><%= item.text.to_md %></dd>
+  <dt><%= t("activerecord.attributes.item.id") %></dt><dd><%= item.id %></dd>
+  <dt><%= t("activerecord.attributes.item.position") %></dt><dd><%= item.position %></dd>
+  <dt><%= t("activerecord.attributes.item.title") %></dt><dd><%= item.title %></dd>
+  <dt><%= t("activerecord.attributes.item.text") %></dt><dd><%= item.text.to_md %></dd>
 </dl>
 
-<p>
-  <%= link_to "Edit", edit_admin_item_path(item) %> |
-  <%= link_to "Destroy", [:admin, item], :confirm => "Are you sure?", :method => :delete %>
-</p>
+<div class="controls text-right">
+  <p>
+    <%= link_to (t "views.items.show.edit_button"), edit_admin_item_path(item), :class => "btn btn-primary" %>
+    <%= link_to (t "views.items.show.delete_button"), [:admin, item], :data => { :confirm => (t "views.admin_users.show.delete_confirmation") }, :method => :delete, :class => "btn btn-danger" %>
+  </p>
+</div>

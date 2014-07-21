@@ -9,11 +9,11 @@ class Admin::AdminUserSessionsController < Admin::AdminController
     @admin_user_session = AdminUserSession.new(params[:admin_user_session])
 
     if @admin_user_session.save
-      flash[:notice] = "Admin User authenticated!"
+      flash[:notice] = t("controllers.admin_user_sessions.authenticate.success")
       redirect_back_or_default admin_root_path
     else
-      flash[:alert] = "Not possible to authenticate"
-      render action: "new"
+      flash[:alert] = t("controllers.admin_user_sessions.authenticate.error")
+      render :action => :new
     end
   end
 
@@ -21,21 +21,21 @@ class Admin::AdminUserSessionsController < Admin::AdminController
     @admin_user_session = AdminUserSession.find
     @admin_user_session.destroy if @admin_user_session
 
-    redirect_to admin_login_path, :notice => "Admin User logged out!"
+    redirect_to admin_login_path, :notice => t("controllers.admin_user_sessions.logout.success")
   end
 
   def forgot_password
     @admin_user_session = AdminUserSession.new
   end
 
-  def forgot_password_send_email
-    admin_user = AdminUser.find_by_email( params[:admin_user_session][:email] )
+  def forgot_password_submit
+    admin_user = AdminUser.find_by_email(params[:admin_user_session][:email])
 
     if admin_user
       admin_user.send_reset_password_email
-      redirect_to admin_forgot_password_path, :notice => "Instructions to reset your password have been sent to your email"
+      redirect_to admin_forgot_password_path, :notice => t("controllers.admin_user_sessions.reset_password.success")
     else
-      redirect_to admin_forgot_password_path, :alert => "We can't find the email '#{params[:admin_user_session][:email]}'"
+      redirect_to admin_forgot_password_path, :alert => t("controllers.admin_user_sessions.reset_password.error", :email => params[:admin_user_session][:email])
     end
   end
 end

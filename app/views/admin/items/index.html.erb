@@ -1,4 +1,8 @@
-<% title "Items" %>
+<% title (t "views.items.index.title") %>
+
+<ol class="breadcrumb">
+  <li class="active"><%= t("layouts.breadcrumbs.items") %></li>
+</ol>
 
 <div id="items">
   <p><%= link_to "New Item", :new_admin_item, :class => "btn btn-default" %></p>
@@ -7,10 +11,10 @@
     <thead>
       <tr>
         <th class="col-sm-1"></th>
-        <th class="col-sm-1">Id</th>
-        <th class="col-sm-7">Title</th>
-        <th class="col-sm-1">Position</th>
-        <th class="col-sm-2">Created At</th>
+        <th class="col-sm-1"><%= t("activerecord.attributes.item.id") %></th>
+        <th class="col-sm-7"><%= t("activerecord.attributes.item.title") %></th>
+        <th class="col-sm-1"><%= t("activerecord.attributes.item.position") %></th>
+        <th class="col-sm-2"><%= t("activerecord.attributes.item.created_at") %></th>
       </tr>
     </thead>
 

@@ -11,9 +11,9 @@
 
   <div class="collapse navbar-collapse navbar-ex6-collapse">
     <ul class="nav navbar-nav">
-      <li><%= link_to "Items", :front_items %></li>
-      <li><%= link_to "About", front_page_path("about") %></li>
-      <li><%= link_to "Login", :admin_login %></li>
+      <li><%= link_to t("layouts.menu.items"), :front_items %></li>
+      <li><%= link_to t("layouts.menu.page_about"), front_page_path("about") %></li>
+      <li><%= link_to t("layouts.menu.login"), :admin_login %></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

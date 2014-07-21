@@ -1,3 +1,143 @@
 en:
   dictionary:
     menu_brand: "Skeleton Admin"
+
+  activerecord:
+
+    models:
+      admin_user: "Admin User"
+      Item: "Item"
+
+    attributes:
+
+      admin_user:
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        created_at: "Created at"
+        updated_at: "Updated at"
+
+      item:
+        id: "Id"
+        title: "Title"
+        text: "Text"
+        position: "Position"
+        created_at: "Created at"
+
+  layouts:
+    menu:
+      admin_users: "Admin Users"
+      items: "Items"
+      items_list: "List"
+      items_new: "New"
+      log_book_events_list: "LogBook Events"
+      logout: "Logout"
+      page_about: "About"
+      login: "Login"
+
+    breadcrumbs:
+      admin_user_sessions: "Forgotten Password"
+      admin_users: "Admin Users"
+      login_admin: "Admin Login to the Samplive Platform"
+      items: "Items"
+      reset_password: "Reset your password"
+      forgot_password: "Forgotten Password"
+      new: "New"
+      edit: "Edit"
+
+  views:
+
+    admin_user_sessions:
+      forgot_password:
+        title: "Forgotten Password"
+        text: "Please provide your email address to receive the password reset link"
+        reset_password_button: "Reset Password"
+
+      new:
+        title: "Admin Login to the Samplive Platform"
+        forgotten_password_text: "Forgotten Password"
+        remember_me: "Remember me"
+        login_button: "Sign in"
+
+    admin_users:
+      form:
+        title: "Admin Attributes"
+
+      edit:
+        title: "AdminUsers | %{admin_user_name} | Edit"
+        text: "Here you can modify the Admin User details"
+
+      index:
+        title: "Admin Users"
+        new_admin_user_button: "New Admin User"
+
+      new:
+        title: "Admin Users | New"
+        text: "Here you can create a new Admin User"
+
+      reset_password:
+        title: "Reset your password"
+        text: "Please enter your new password"
+        button: "Reset password"
+
+      show:
+        title: "Admin Users | %{admin_user_name}"
+        edit_button: "Edit"
+        delete_button: "Delete"
+        delete_confirmation: "Are you sure you want to delete this Admin user?"
+
+    items:
+      show:
+        title: "Items | %{item_title}"
+        edit_button: "Edit Item"
+        delete_button: "Delete Item"
+        delete_confirmation: "Are you sure you want to delete this Item?"
+
+      edit:
+        title: "Items | %{item_title} | Edit"
+        text: "Here you can modify the Item details"
+
+      index:
+        title: "Items"
+
+      new:
+        title: "Items | New"
+
+  controllers:
+
+    admin_users:
+      create:
+        success: "Successfully created Admin User"
+        error: "Errors were encountered when trying to create Admin User"
+      update:
+        success: "Successfully updated Admin User"
+        error: "Errors were encountered when trying to update Admin User"
+      destroy:
+        success: "Successfully deleted Admin User"
+      reset_password:
+        success: "Successfully reset password"
+        error: "Errors were encountered when trying to reset password"
+
+    admin:
+      authentication_required: "You need to be authenticated to access this page"
+
+    admin_user_sessions:
+      authenticate:
+        success: "Admin User Authenticated"
+        error: "Authentication Failure"
+      logout:
+        success: "Successfully logged out"
+      reset_password:
+        success: "Password reset instructions have been sent to your email"
+        error: "Sorry, %{email} can't be found in our database"
+
+    items:
+      create:
+        success: "Successfully created Item: '%{item_title}'"
+        error: "Errors were encountered when trying to create Item"
+      update:
+        success: "Successfully updated Admin Item: '%{item_title}'"
+        error: "Errors were encountered when trying to update Item"
+      destroy:
+        success: "Successfully deleted Item: '%{item_title}'"
+

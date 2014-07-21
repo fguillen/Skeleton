@@ -1,4 +1,9 @@
-<% title "New Item" %>
+<% title (t "views.items.new.title") %>
+
+<ol class="breadcrumb">
+  <li><%= link_to (t "layouts.breadcrumbs.items"), [:admin, :items] %></li>
+  <li class="active"><%= (t "layouts.breadcrumbs.new") %></li>
+</ol>
 
 <div id="item_form">
   <%= render "form" %>

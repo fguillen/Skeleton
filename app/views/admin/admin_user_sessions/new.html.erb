@@ -1,4 +1,8 @@
-<% title "Login" %>
+<% title (t "views.admin_user_sessions.new.title") %>
+
+<ol class="breadcrumb push_down">
+  <li class="active"><%= (t "layouts.breadcrumbs.login_admin") %></li>
+</ol>
 
 <%= form_for [:admin, @admin_user_session], :html => { :class => "form-horizontal" } do |f| %>
   <%= render "/shared/form_errors", :object => f.object %>
