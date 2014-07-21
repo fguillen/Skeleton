@@ -1,6 +1,5 @@
 <meta charset="utf-8">
-
-<title>Skeleton | <%= content_for?(:title) ? yield(:title) : "" %></title>
+<title>Skeleton <%= "| #{yield(:title)}" if content_for?(:title) %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="icon" type="image/png" href="/assets/app/shared/skull.png">
