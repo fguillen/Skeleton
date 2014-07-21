@@ -1,6 +1,6 @@
 development:
   host: "localhost:3000"
-  admin_email: "skeleton.mail@email.com"
+  admin_email: "skeleton.development@email.com"
 
   smtp:
     enabled: true
@@ -10,16 +10,33 @@ development:
     user: "user"
     pass: "pass"
 
+staging:
+  host: "localhost:3000"
+  admin_email: "skeleton.staging@email.com"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "skeleton.org"
+    user: "user"
+    pass: "pass"
+
+  s3_credentials:
+    bucket: "skeleton_staging"
+    access_key_id: "KEY"
+    secret_access_key: "SECRET"
+
 test:
   host: "test.com"
-  admin_email: "skeleton.mail@email.com"
+  admin_email: "skeleton.test@email.com"
 
   smtp:
     enabled: false
 
 production:
   host: "skeleton.org"
-  admin_email: "skeleton.mail@email.com"
+  admin_email: "skeleton.production@email.com"
 
   s3_credentials:
     bucket: "skeleton_production"

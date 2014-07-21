@@ -1,3 +1,10 @@
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: skeleton_test
+  username: root
+  password:
+
 development:
   adapter: mysql2
   encoding: utf8
@@ -5,12 +12,13 @@ development:
   username: root
   password:
 
-test:
+staging:
   adapter: mysql2
   encoding: utf8
-  database: skeleton_test
+  database: skeleton_staging
   username: root
   password:
+
 
 production:
   adapter: mysql2
