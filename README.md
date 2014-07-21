@@ -98,17 +98,6 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
-# add not_found and not_allowed
-
-  def not_allowed
-    raise ActionController::RoutingError.new("Not allowed")
-  end
-
-  def not_found(message)
-    raise ActiveRecord::RecordNotFound.new(message)
-  end
-
-
 # Make `rake` to also execute tests in `test/etc` folder
 # Check I18n error when not translation.. it is not working in last versions
 # Test reset_password, reset_password_submit
