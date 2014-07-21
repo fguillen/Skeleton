@@ -5,6 +5,10 @@
   </head>
 
   <body>
+    <% if !Rails.env.production? %>
+      <div class="environment_badge"><%= Rails.env %></div>
+    <% end %>
+
     <div id="wrapper">
       <%= render "layouts/admin/menu" %>
       <%= render "layouts/admin/locale" %>
