@@ -8,7 +8,7 @@ class NotifierTest < ActionMailer::TestCase
     email = Notifier.admin_user_reset_password(admin_user).deliver
     assert !ActionMailer::Base.deliveries.empty?
 
-    assert_equal ["skeleton.mail@email.com"], email.from
+    assert_equal ["skeleton.test@email.com"], email.from
     assert_equal ["reset_password_admin@email.com"], email.to
     assert_equal "[Skeleton] Password reset", email.subject
 
