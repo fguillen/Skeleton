@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def not_allowed
+    raise ActionController::RoutingError.new("Not allowed")
+  end
+
+  def not_found(message)
+    raise ActiveRecord::RecordNotFound.new(message)
+  end
+
+
   def set_locale
     new_locale = params[:locale] || ENV["RAILS_LOCALE"] || cookies[:locale] || extract_locale_from_accept_language_header || I18n.default_locale
 
