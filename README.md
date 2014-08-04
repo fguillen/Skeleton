@@ -98,6 +98,9 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+# Remove #wrapper element (Looks like BT is not using it anymore)
+# Remove all not needed assets
+# Update icons to use "glyphicon glyphicon-envelope"
 # Make `rake` to also execute tests in `test/etc` folder
 # Test reset_password, reset_password_submit
 # item / menu : add a margin-bottom

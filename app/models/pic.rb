@@ -27,6 +27,8 @@ class Pic < ActiveRecord::Base
       :storage => :s3,
       :s3_credentials => APP_CONFIG[:s3_credentials],
       :path => "/assets/uploads/:rails_env/:item_id/:id_:style.:extension",
+#      :url => ":s3_domain_url",                          # use it in case is needed
+#      :s3_host_name => "s3-eu-west-1.amazonaws.com"      # use it in case is needed
     )
   else
     has_attached_file(
