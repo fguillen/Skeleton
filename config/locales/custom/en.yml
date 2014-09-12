@@ -42,6 +42,7 @@ en:
       items: "Items"
       reset_password: "Reset your password"
       forgot_password: "Forgotten Password"
+      log_book_events: "LogBook Events"
       new: "New"
       edit: "Edit"
 

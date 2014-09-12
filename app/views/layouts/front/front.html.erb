@@ -9,10 +9,10 @@
       <div class="environment_badge"><%= Rails.env %></div>
     <% end %>
 
-    <div id="wrapper">
+    <div class="container">
       <%= render "layouts/front/menu" %>
 
-      <div id="content" class="container">
+      <div id="content">
         <h1 class="page-title"><%= yield(:title) %></h1>
         <%= yield %>
       </div>

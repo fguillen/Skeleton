@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Skeleton <%= "| #{yield(:title)}" if content_for?(:title) %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,10 +15,9 @@
 <meta name="Rating" content="General">
 <meta name="Robots" content="INDEX,FOLLOW">
 
-<%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
-<%= javascript_include_tag "/assets/vendor/jquery/jquery.ui.js" %>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <%= javascript_include_tag "/assets/vendor/rails/jquery_ujs.js" %>
-<%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
 
 <!-- bootstrap -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

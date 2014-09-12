@@ -1,19 +1,15 @@
-<div class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container">
-
     <div class="navbar-header">
-
-      <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar_menu">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
       <%= link_to t("dictionary.menu_brand"), :admin_root, :class => "navbar-brand" %>
     </div>
 
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <div class="navbar-collapse collapse" id="navbar_menu">
       <ul class="nav navbar-nav">
         <li class="<%= admin_menu_class(:admin_users) %>"><%= link_to t("layouts.menu.admin_users"), :admin_admin_users %></li>
 
@@ -34,5 +30,4 @@
       </p>
     </div>
   </div>
-
-</div>
+</nav>

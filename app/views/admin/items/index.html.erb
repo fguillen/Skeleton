@@ -5,23 +5,21 @@
 </ol>
 
 <div id="items">
-  <p><%= link_to "New Item", :new_admin_item, :class => "btn btn-default" %></p>
-
   <table class="table table-striped table-hover sortable">
     <thead>
       <tr>
-        <th class="col-sm-1"></th>
-        <th class="col-sm-1"><%= t("activerecord.attributes.item.id") %></th>
-        <th class="col-sm-7"><%= t("activerecord.attributes.item.title") %></th>
-        <th class="col-sm-1"><%= t("activerecord.attributes.item.position") %></th>
-        <th class="col-sm-2"><%= t("activerecord.attributes.item.created_at") %></th>
+        <th></th>
+        <th><%= t("activerecord.attributes.item.id") %></th>
+        <th><%= t("activerecord.attributes.item.title") %></th>
+        <th><%= t("activerecord.attributes.item.position") %></th>
+        <th><%= t("activerecord.attributes.item.created_at") %></th>
       </tr>
     </thead>
 
     <tbody data-update-url="<%= reorder_admin_items_url %>">
       <% @items.each do |item| %>
         <tr data-id="<%= item.id %>">
-          <td class="handle"><i class="icon-list"></i></td>
+          <td class="handle"><span class="glyphicon glyphicon-th-list"></span></td>
           <td><%= link_to item.id, [:admin, item] %></td>
           <td><%= item.title %></td>
           <td><%= item.position %></td>
@@ -30,6 +28,8 @@
       <% end %>
     </tbody>
   </table>
+
+  <p class="text-right"><%= link_to "New Item", :new_admin_item, :class => "btn btn-default" %></p>
 
   <%= will_paginate(@items, :renderer => BootstrapPagination::Rails, :class => "pagination pagination-right") %>
 </div>

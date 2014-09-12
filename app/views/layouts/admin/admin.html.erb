@@ -9,17 +9,15 @@
       <div class="environment_badge"><%= Rails.env %></div>
     <% end %>
 
-    <div id="wrapper">
+    <div class="container">
       <%= render "layouts/admin/menu" %>
       <%= render "layouts/admin/locale" %>
 
       <div id="loading"><img src="/assets/app/admin/img/spinner_min.gif" /></div>
 
-      <div id="content" class="container">
-        <h1 class="page-title"><%= yield(:title) %></h1>
-
+      <div id="content">
         <% flash.each do |type, message| %>
-          <%= content_tag :div, BlueCloth.new(message).to_html.html_safe, :id => "flash_#{type}", :class => twitterized_type(type) %>
+          <%= content_tag :div, BlueCloth.new(message).to_html.html_safe, :id => "flash_#{type}", :class => twitterized_type(type.to_sym) %>
         <% end %>
 
         <%= yield %>
