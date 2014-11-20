@@ -98,9 +98,32 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+* Add whenever (including capistrano)
+* Add sortable_link [1]
+* Footer overhide the content on the bottom of the container.. look for ".container{ margin-bottom: -70px; }"
 * Make `rake` to also execute tests in `test/etc` folder
 * Test reset_password, reset_password_submit
 * Change all urls by this style: [:offer_clicks, :provider, @provider_user, offer]
 * Add Skeleton_session to be replaced in the init script
 * Improve test coverage
 * Make menu_class using Rails.application.routes.router.recognize(request){ |route, matches, parameters| puts route.name }
+
+
+[1] ---
+    module PaginatedModel
+      def paginated(opts = {})
+        opts[:sort_attribute] ||= "created_at"
+        opts[:sort_direction] ||= "desc"
+        opts[:page] ||= 1
+
+        paginate(
+          :page => opts[:page],
+          :per_page => APP_CONFIG[:elements_per_page]
+        ).order("#{opts[:sort_attribute]} #{opts[:sort_direction]}")
+      end
+    end
+
+    ActiveRecord::Base.extend PaginatedModel
+
+    css
+    application_helper
