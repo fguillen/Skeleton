@@ -98,6 +98,7 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+* Upgrade to Rails 4.2.0: (check SurveyPlatform project)
 * Add whenever (including capistrano)
 * Add sortable_link [1]
 * Footer overhide the content on the bottom of the container.. look for ".container{ margin-bottom: -70px; }"
