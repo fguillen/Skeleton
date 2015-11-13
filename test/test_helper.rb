@@ -4,14 +4,9 @@ if ENV["COVERAGE"]
 end
 
 ENV["RAILS_ENV"] = "test"
-
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
-require "minitest/rails"
-require "minitest/rails/capybara"
-require "minitest/focus"
-# require "mocha/setup"
-require "factory_girl"
+require "mocha/setup"
 require_relative "factories"
 
 class ActiveSupport::TestCase

@@ -1,13 +1,17 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 4.1.7"
+gem "rails", "4.2.5"
 gem "activerecord-session_store"
 gem "protected_attributes"
 
 gem "sqlite3"
 gem "json"
 gem "paperclip"
+
+# Exception notifier (maybe you only want one)
 gem "exception_notification"
+gem "rollbar"
+
 gem "aws-sdk"
 gem "strip_attributes"
 gem "will_paginate"
@@ -18,8 +22,10 @@ gem "scrypt" # authlogic dependency
 gem "ruby_regex", :git => "git@github.com:fguillen/ruby_regex.git"
 gem "lograge" # log cleaning
 gem "acts-as-taggable-on"
-gem "log_book", "~> 0.1.7"
+gem "log_book", :git => "git@github.com:fguillen/LogBook.git"
+gem "whenever", :require => false
 gem "style_palette", :git => "git://github.com/fguillen/StylePalette.git"
+gem "minitest-rails"
 
 group :development do
   gem "nifty-generators"
@@ -31,15 +37,15 @@ group :development do
 end
 
 group :test do
-  gem "mocha"#, :require => false
+  gem "mocha", "1.0.0", :require => false
   gem "factory_girl"
   gem "simplecov", :require => false
   gem "delorean"
-  gem "capybara", "2.2.0"
+  gem "capybara"
   gem "database_cleaner"
-  gem "selenium-webdriver", "2.35.1"
 
-  gem "minitest-rails", "~> 2.1.0"
-  gem "minitest-rails-capybara", "~> 2.1.1"
+  gem "minitest"
+  gem "minitest-rails-capybara"
+  # gem "minitest-colorize"
   gem "minitest-focus"
 end

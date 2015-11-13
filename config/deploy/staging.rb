@@ -1,7 +1,10 @@
 set :stage, :staging
+
 set :rails_env, "staging"
 set :branch, "staging"
-role :app, "dev.skeleton.com"
-role :web, "dev.skeleton.com"
+role :app, ["webdev001.it.skeleton.com", "webdev002.it.skeleton.com"]
+role :web, ["webdev001.it.skeleton.com", "webdev002.it.skeleton.com"]
 
-
+# whenever
+role :whenever, ["webdev001.it.skeleton.com"]
+set :whenever_roles, :whenever
