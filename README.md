@@ -98,6 +98,7 @@ Replace `<ProjectName>` with yout project name:
 
 ## TODO
 
+# Fix the footer at the bottom: https://github.com/DaliaResearch/ReportsDashboard/commit/d18897824d2291f363bb764e3aefee0c31c0d393
 # Remove #wrapper element (Looks like BT is not using it anymore)
 # Remove all not needed assets
 # Update icons to use "glyphicon glyphicon-envelope"
