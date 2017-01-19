@@ -95,6 +95,7 @@ Replace `<ProjectName>` with yout project name:
 * [AppConfig](https://github.com/ryanb/nifty-generators)
 * Menu element actived helper
 * Tableless model
+* [LogBook](https://github.com/fguillen/LogBook) integration
 
 ## TODO
 
